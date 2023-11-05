@@ -1,36 +1,28 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-
-var positions = [
-  {
-   
-    leftArm: { x: 230, y: 280 },
-    rightArm: { x: 370, y: 280 },
-   
-    leftLeg: { x: 350, y: 430 },
-    rightLeg: { x: 250, y: 430 },
-  },
-  {
-   
-    leftArm: { x: 180, y: 280 },
-    rightArm: { x: 320, y: 280 },
-   
-    leftLeg: { x: 300, y: 430 },
-    rightLeg: { x: 200, y: 430 },
-  },
-  {
-    
-    leftArm: { x: 280, y: 280 },
-    rightArm: { x: 420, y: 280 },
-    
-    leftLeg: { x: 400, y: 430 },
-    rightLeg: { x: 300, y: 430 },
-  },
-];
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
 var currentPosIndex = 0;
 
-document.body.onload = draw();
+const positions = [
+  {
+    leftArm: { x: 220, y: 250 },
+    rightArm: { x: 380, y: 250 },
+    leftLeg: { x: 350, y: 500 },
+    rightLeg: { x: 250, y: 500 },
+  },
+  {
+    leftArm: { x: 220, y: 300 },
+    rightArm: { x: 380, y: 300 },
+    leftLeg: { x: 350, y: 450 },
+    rightLeg: { x: 250, y: 450 },
+  },
+  {
+    leftArm: { x: 220, y: 200 },
+    rightArm: { x: 380, y: 200 },
+    leftLeg: { x: 350, y: 400 },
+    rightLeg: { x: 250, y: 400 },
+  },
+];
 
 function draw() {
   var currentPos = positions[currentPosIndex];
@@ -40,7 +32,6 @@ function draw() {
   ctx.strokeStyle = "black";
   ctx.lineWidth = 2;
 
-  // hanger
   ctx.beginPath();
   ctx.moveTo(200, 550);
   ctx.lineTo(200, 50);
@@ -48,79 +39,68 @@ function draw() {
   ctx.lineTo(300, 100);
   ctx.stroke();
 
-  //
   ctx.strokeStyle = "red";
   ctx.fillStyle = "yellow";
 
-  // head
   ctx.beginPath();
-  ctx.arc(currentPos.head.x, currentPos.head.y, 50, 0, 2 * Math.PI);
+  ctx.arc(300, 150, 50, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  // left eye
   ctx.beginPath();
-  ctx.moveTo(currentPos.leftEye.x - 20, currentPos.leftEye.y - 25);
-  ctx.lineTo(currentPos.leftEye.x - 10, currentPos.leftEye.y - 25);
+  ctx.moveTo(300 - 20, 150 - 25);
+  ctx.lineTo(300 - 10, 150 - 25);
   ctx.stroke();
 
-  // righ eye
   ctx.beginPath();
-  ctx.moveTo(currentPos.rightEye.x + 20, currentPos.rightEye.y - 25);
-  ctx.lineTo(currentPos.rightEye.x + 10, currentPos.rightEye.y - 25);
+  ctx.moveTo(300 + 20, 150 - 25);
+  ctx.lineTo(300 + 10, 150 - 25);
   ctx.stroke();
 
-  // nose
   ctx.beginPath();
-  ctx.moveTo(currentPos.nose.x, currentPos.nose.y - 10);
-  ctx.lineTo(currentPos.nose.x, currentPos.nose.y);
+  ctx.moveTo(300, 150 - 10);
+  ctx.lineTo(300, 160);
   ctx.stroke();
 
-  // Mouth
   ctx.beginPath();
-  ctx.moveTo(currentPos.mouth.x - 10, currentPos.mouth.y);
-  ctx.lineTo(currentPos.mouth.x + 10, currentPos.mouth.y);
+  ctx.moveTo(280, 170);
+  ctx.lineTo(320, 170);
   ctx.stroke();
 
-  // neck
   ctx.beginPath();
-  ctx.moveTo(currentPos.neck.x, currentPos.neck.y);
-  ctx.lineTo(currentPos.neck.x, currentPos.neck.y + 50);
+  ctx.moveTo(300, 200);
+  ctx.lineTo(300, 250);
   ctx.stroke();
 
-  // left arm
   ctx.beginPath();
-  ctx.moveTo(currentPos.neck.x, currentPos.neck.y + 50);
+  ctx.moveTo(300, 250);
   ctx.lineTo(currentPos.leftArm.x, currentPos.leftArm.y);
   ctx.stroke();
 
-  //   right arm
   ctx.beginPath();
-  ctx.moveTo(currentPos.neck.x, currentPos.neck.y + 50);
+  ctx.moveTo(300, 250);
   ctx.lineTo(currentPos.rightArm.x, currentPos.rightArm.y);
   ctx.stroke();
 
-  //   torso
   ctx.beginPath();
-  ctx.moveTo(currentPos.neck.x, currentPos.neck.y + 50);
-  ctx.lineTo(currentPos.torso.x, currentPos.torso.y);
+  ctx.moveTo(300, 250);
+  ctx.lineTo(300, 450);
   ctx.stroke();
 
-  //   left leg
   ctx.beginPath();
-  ctx.moveTo(currentPos.torso.x, currentPos.torso.y);
+  ctx.moveTo(300, 450);
   ctx.lineTo(currentPos.leftLeg.x, currentPos.leftLeg.y);
   ctx.stroke();
 
-  //   right leg
   ctx.beginPath();
-  ctx.moveTo(currentPos.torso.x, currentPos.torso.y);
+  ctx.moveTo(300, 450);
   ctx.lineTo(currentPos.rightLeg.x, currentPos.rightLeg.y);
   ctx.stroke();
 }
 
+draw();
+
 canvas.addEventListener("click", function () {
-  // this methode of getting next index was from chatgpt
   currentPosIndex = (currentPosIndex + 1) % positions.length;
   draw();
 });
