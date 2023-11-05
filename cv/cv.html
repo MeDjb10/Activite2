@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV</title>
+
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+
+  <body>
+    <button class="printpdf" onclick="PrintPDF()">Download CV as PDF</button>
+    <div class="container">
+      <div class="profile">
+        <div id="CV-PDF"></div>
+        <div class="profile_container">
+          <div>
+            <h1 class="profile_name">
+              <span class="profile_name_firstName">Jabou</span>
+              <span class="profile_name_lastName">Med Amine</span>
+            </h1>
+            <div id="videoContainer">
+              <!-- i used "https://codepen.io/huandu/pen/WNeZMMX" for refrence -->
+              <video id="myVideo" controls>
+                <source src="Introduction/Introduction.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéos.
+                <track
+                  id="track"
+                  src="Introduction/sub.ttv"
+                  kind="subtitles"
+                  srclang="en"
+                  label="Nightmare"
+                  default
+                />
+              </video>
+
+              <div class="controllers">
+                <button id="play">play</button>
+                <button id="pause">pause</button>
+                <button id="increaseVolume">increase volume</button>
+                <button id="decreaseVolume">decrease volume</button>
+              </div>
+            </div>
+            <div>
+              <audio id="myAudio" controls loop volume="0.3">
+                <source src="Introduction/Introduction.MP3" type="audio/MP3" />
+                Votre navigateur ne supporte pas la lecture audio.
+              </audio>
+            </div>
+
+            <p class="profile_title">Software Developer</p>
+            <p class="description profile_description">
+              Je suis un développeur front-end passionné qui étudie à
+              l'Université Iset Charguia. J'ai toujours été fasciné par la
+              création de sites Web et par la possibilité de donner vie à des
+              interfaces interactives et esthétiques. Mon intérêt pour le
+              développement web m'a conduit à me spécialiser dans le domaine du
+              front-end, où je peux mettre en œuvre mes compétences en HTML, CSS
+              et JavaScript pour concevoir des expériences utilisateur
+              conviviales et dynamiques.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="group-1">
+        <div class="skills">
+          <h3 class="title">Expertise</h3>
+          <ul id="skisList" class="skills_list description">
+            <li>JavaScript</li>
+            <li>PHP & Wordpress</li>
+            <li>HTML CSS</li>
+            <li>React JS</li>
+            <li>MERN STACK</li>
+          </ul>
+          <div>
+            <input
+              type="text"
+              id="newSkillInput"
+              placeholder="Enter a new skill"
+            />
+            <button onclick="addSkill()">Add Skill</button>
+          </div>
+        </div>
+        <div class="ref">
+          <h3 class="title">Reference</h3>
+          <div class="ref_item">
+            <h4 class="ref_name">Ex</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
+              neque?
+            </p>
+          </div>
+          <div class="ref_item">
+            <h4 class="ref_name">Ex</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+        </div>
+
+        <div class="edu">
+          <h3 class="title">Education</h3>
+          <div class="edu_item">
+            <p class="item_preTitle">2018-2022</p>
+            <h4 class="item_title">Info</h4>
+            <p class="item_subtitle">Lycee</p>
+          </div>
+          <div class="edu_item">
+            <p class="item_preTitle">2022-2023</p>
+            <h4 class="item_title">TI</h4>
+            <p class="item_subtitle">Iset Charguia</p>
+          </div>
+        </div>
+
+        <div class="certification">
+          <h3 class="title">certification</h3>
+          <div class="certification_item">
+            <p class="item_preTitle">2018</p>
+            <h4 class="item_title">Frontend Developer</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="group-2">
+        <div class="exp">
+          <h3 class="title">Experience</h3>
+          <div class="exp_item">
+            <p class="item_preTitle">2019 - present</p>
+            <h4 class="item_title">Ex</h4>
+            <p class="item_subtitle">Frontend Developer</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+          <div class="exp_item">
+            <p class="item_preTitle">2019 - present</p>
+            <h4 class="item_title">Ex</h4>
+            <p class="item_subtitle">Frontend Developer</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+        </div>
+        <div class="awards">
+          <h3 class="title">Awards</h3>
+          <div class="awards_item">
+            <p class="item_preTitle">2019</p>
+            <h4 class="item_title">Ex</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+          <div class="awards_item">
+            <p class="item_preTitle">2019</p>
+            <h4 class="item_title">Ex</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <h3 class="title">Interest</h3>
+          <div class="interest_items">
+            <div class="interest_item">
+              <span>Music</span>
+            </div>
+            <div class="interest_item">
+              <span>Gaming</span>
+            </div>
+            <div class="interest_item">
+              <span>Travel</span>
+            </div>
+          </div>
+          <br />
+          <div class="interest_item">
+            <input type="text" id="newInterest" placeholder="Add Interest" />
+            <button onclick="addInterest()">Add</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="group-3">
+        <div class="contact">
+          <h3 class="title">Contact</h3>
+          <label for="showContact" class="checkbox-label"
+            >Show Contact Info</label
+          >
+          <input
+            type="checkbox"
+            id="showContact"
+            onclick="toggleContactInfo()"
+            class="checkbox-input"
+          />
+          <div id="contactInfo" hidden>
+            <!-- Contact information -->
+            <h2>Email: Jabou.medamine@gmail.com</h2>
+            <h2>Phone: 52251488</h2>
+          </div>
+        </div>
+      </div>
+      <div id="Reteur">
+        <a href="../index.html">Reteur</a>
+      </div>
+    </div>
+    <script src="cv.js"></script>
+  </body>
+</html>

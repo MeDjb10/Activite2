@@ -1,0 +1,26 @@
+WEBVTT
+STYLE
+::cue {
+  background-color:black;
+  color: orange;
+}
+
+
+00:00:00.000 --> 00:00:01.000 size:100%
+Hi,my name is Karl.
+
+00:00:01.000 --> 00:00:02.000 size:100%
+Im an NBA student.
+
+00:00:02.100 --> 00:00:04.600 size:100%
+From the university of California.
+
+00:00:04.700 --> 00:00:06.700 size:100%
+And im curently studying,
+
+00:00:06.800 --> 00:00:07.500 size:100%
+Mechanical Engineering.
+
+j'ai utilisé ces deux sites pour comprendre comment utiliser le format ttv et la balise html track.
+https://www.w3schools.com/tags/tag_track.asp?fbclid=IwAR2RN2hsmR2cZXTFQ8UGdhvTq84pUj7lUHLXJfg9PCu3bt0hGV5uX55nYCU
+https://developer.mozilla.org/fr/docs/Web/API/WebVTT_API?fbclid=IwAR2cV9kIU4z-bnVpc9kFwR-1GWEz0sFO54ZJEPoS6HFzlM9gSqVfzkXjMaA
